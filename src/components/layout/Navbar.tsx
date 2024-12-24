@@ -47,7 +47,6 @@ export default function Navbar() {
             <div className="hidden sm:flex space-x-8">
               <NavLink to="/">
                 <span className="flex items-center gap-2">
-                  <Home className="h-4 w-4" />
                   Home
                 </span>
               </NavLink>
@@ -117,7 +116,7 @@ export default function Navbar() {
               to="/"
               className="flex items-center gap-2 px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             >
-              <Home className="h-4 w-4" />
+              
               Home
             </RouterLink>
             <RouterLink

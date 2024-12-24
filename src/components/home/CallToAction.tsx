@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 export default function CallToAction() {
   return (
@@ -11,20 +12,20 @@ export default function CallToAction() {
         </h2>
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
-            <a
-              href="/get-started"
+            <Link
+              to="/get-started" // Use Link component for React Router
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
             >
               Get Started
-            </a>
+            </Link>
           </div>
           <div className="ml-3 inline-flex rounded-md shadow">
-            <a
-              href="/contact"
+            <Link
+              to="/contact" // Use Link component for React Router
               className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Contact Us <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

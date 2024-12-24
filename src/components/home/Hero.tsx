@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ArrowRight, Code, Layout, Briefcase, FileCode } from 'lucide-react';
+import { ArrowRight, ArrowDown, Code, Layout, Briefcase, FileCode } from 'lucide-react';
 
 export default function Hero() {
   const [trails, setTrails] = useState([]);
+  const [arrowDirection, setArrowDirection] = useState('right'); // State to toggle arrow direction
 
   const handleMouseMove = (e) => {
     const newTrail = {
@@ -10,7 +11,15 @@ export default function Hero() {
       y: e.clientY,
       id: Math.random(),
     };
-    setTrails((prevTrails) => [...prevTrails, newTrail].slice(-20));
+    setTrails((prevTrails) => [...prevTrails, newTrail].slice(-20)); // Limit to 20 trails
+  };
+
+  const handleExploreClick = () => {
+    setArrowDirection('down'); // Change arrow direction on button click
+    const nextSection = document.getElementById('services');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the next section
+    }
   };
 
   return (
@@ -18,39 +27,44 @@ export default function Hero() {
       className="relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-300" 
       onMouseMove={handleMouseMove}
     >
-      <div className="mx-auto w-11/12 lg:w-10/12 h-[90vh] px-4 sm:px-16 py-20 sm:py-40 lg:px-24">
-        <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 sm:text-7xl drop-shadow-lg">
+      <div className="mx-auto w-10/12 h-[93vh] px-16 py-40 sm:py-48 lg:px-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="text-7xl font-extrabold tracking-tight text-gray-900 sm:text-7xl drop-shadow-lg">
             Transform Your Digital<br />Presence
           </h1>
-          <p className="mt-6 sm:mt-10 text-lg sm:text-xl lg:text-2xl leading-8 text-gray-700 sm:text-2xl">
+          <p className="mt-10 text-xl leading-8 text-gray-700 sm:text-2xl">
             Professional websites tailored for your success. From stunning portfolios to business solutions,
             we craft the perfect digital experience for you.
           </p>
-          <div className="mt-8 sm:mt-12 flex items-center justify-center gap-x-6">
-            <a
-              href="#services"
-              className="text-lg sm:text-xl rounded-full bg-indigo-600 px-8 py-4 sm:px-10 sm:py-5 text-white font-medium shadow-lg hover:shadow-indigo-500/50 transition-all transform hover:-translate-y-1 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-600 flex items-center gap-4"
+          <div className="mt-12 flex items-center justify-center gap-x-8">
+            <button
+              onClick={handleExploreClick}
+              className="text-xl rounded-full bg-indigo-600 px-10 py-5 text-white font-medium shadow-lg hover:shadow-indigo-500/50 transition-all transform hover:-translate-y-1 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-indigo-600 flex items-center gap-6"
             >
-              Explore Services <ArrowRight className="h-6 w-6 sm:h-8 sm:w-8" />
-            </a>
+              Explore Services 
+              {arrowDirection === 'right' ? (
+                <ArrowRight className="h-8 w-8" />
+              ) : (
+                <ArrowDown className="h-8 w-8" />
+              )}
+            </button>
           </div>
         </div>
       </div>
 
       {/* Floating Icons */}
       <div className="absolute inset-0 z-10">
-        <div className="absolute top-16 sm:top-24 left-1/4 animate-ping text-indigo-600 opacity-60">
-          <Code className="h-10 w-10 sm:h-12 sm:w-12" />
+        <div className="absolute top-16 left-1/4 animate-ping text-indigo-600 opacity-60">
+          <Code className="h-12 w-12" />
         </div>
-        <div className="absolute top-1/3 right-4 sm:right-16 animate-bounce text-indigo-500 opacity-60">
-          <Layout className="h-10 w-10 sm:h-12 sm:w-12" />
+        <div className="absolute top-1/3 right-16 animate-bounce text-indigo-500 opacity-60">
+          <Layout className="h-12 w-12" />
         </div>
         <div className="absolute bottom-1/4 left-1/8 animate-bounce text-indigo-700 opacity-60">
-          <Briefcase className="h-10 w-10 sm:h-12 sm:w-12" />
+          <Briefcase className="h-12 w-12" />
         </div>
         <div className="absolute bottom-10 right-1/4 animate-ping text-indigo-400 opacity-60">
-          <FileCode className="h-10 w-10 sm:h-12 sm:w-12" />
+          <FileCode className="h-12 w-12" />
         </div>
       </div>
 
@@ -90,6 +104,63 @@ export default function Hero() {
           100% {
             opacity: 0;
             transform: translate(-50%, -50%) scale(0.5);
+          }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 640px) {
+          .mx-auto {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+
+          .text-7xl {
+            font-size: 3rem; /* Decrease heading font size on mobile */
+          }
+
+          .text-xl {
+            font-size: .125rem; /* Adjust text size for mobile */
+          }
+
+          .mt-10 {
+            margin-top: 2rem;
+          }
+
+          .mt-12 {
+            margin-top: 3rem;
+          }
+
+          /* Adjust Icon sizes */
+          .h-12 {
+            height: 40px;
+            width: 40px;
+          }
+
+          .px-10 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+
+          .py-5 {
+            padding-top: 1.25rem;
+            padding-bottom: 1.25rem;
+          }
+
+          .gap-x-8 {
+            gap: 2rem;
+          }
+
+          .h-8 {
+            height: 32px;
+            width: 32px;
+          }
+
+          .text-gray-700 {
+            font-size: 1rem;
+          }
+
+          .text-gray-900 {
+            font-size: 2rem;
           }
         }
       `}</style>

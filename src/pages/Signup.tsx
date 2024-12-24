@@ -209,48 +209,44 @@ export default function SignUp() {
       </div>
 
       {/* Blinking stars effect */}
-      {
-        stars.map((star, index) => (
-          <div
-            key={index}
-            style={{
-              position: 'absolute',
-              top: star.y + 'px',
-              left: star.x + 'px',
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              borderRadius: '50%',
-              backgroundColor: 'white',
-              boxShadow: '0 0 10px rgba(255, 255, 255, 0.7)',
-              pointerEvents: 'none', // Prevent interaction with stars
-              animation: `blink ${star.duration}s infinite alternate`,
-            }}
-          />
-        ))
-      }
+      {stars.map((star, index) => (
+        <div
+          key={index}
+          style={{
+            position: 'absolute',
+            top: star.y + 'px',
+            left: star.x + 'px',
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            borderRadius: '50%',
+            backgroundColor: 'white',
+            boxShadow: '0 0 10px rgba(255, 255, 255, 0.7)',
+            pointerEvents: 'none', // Prevent interaction with stars
+            animation: `blink ${star.duration}s infinite alternate`,
+          }}
+        />
+      ))}
 
       {/* Shooting stars */}
-      {
-        shootingStars.map((star, index) => (
-          <div
-            key={index}
-            style={{
-              position: 'absolute',
-              top: star.y + 'px',
-              left: star.x + 'px',
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              backgroundColor: 'white',
-              borderRadius: '50%',
-              boxShadow: '0 0 20px rgba(255, 255, 255, 1)',
-              pointerEvents: 'none',
-              animation: `shoot ${star.speed}s linear infinite`,
-              animationDelay: `${Math.random() * 3}s`,
-              transform: `translateX(${star.directionX * 100}px)`, // Move in random direction
-            }}
-          />
-        ))
-      }
+      {shootingStars.map((star, index) => (
+        <div
+          key={index}
+          style={{
+            position: 'absolute',
+            top: star.y + 'px',
+            left: star.x + 'px',
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            backgroundColor: 'white',
+            borderRadius: '50%',
+            boxShadow: '0 0 20px rgba(255, 255, 255, 1)',
+            pointerEvents: 'none',
+            animation: `shoot ${star.speed}s linear infinite`,
+            animationDelay: `${Math.random() * 3}s`,
+            transform: `translateX(${star.directionX * 100}px)`, // Move in random direction
+          }}
+        />
+      ))}
 
       {/* CSS for animations */}
       <style>
@@ -271,6 +267,46 @@ export default function SignUp() {
             100% {
               transform: translateX(1000px) translateY(500px);
               opacity: 0;
+            }
+          }
+
+          /* Responsive Design */
+          @media (max-width: 1024px) {
+            .w-full.max-w-md {
+              width: 90%;
+            }
+            .p-12 {
+              padding: 6%;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .w-full.max-w-md {
+              width: 100%;
+            }
+            .p-12 {
+              padding: 4%;
+            }
+            .text-4xl {
+              font-size: 2.5rem;
+            }
+            .mt-6 {
+              margin-top: 2rem;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .w-full.max-w-md {
+              width: 100%;
+            }
+            .p-12 {
+              padding: 4%;
+            }
+            .text-4xl {
+              font-size: 2rem;
+            }
+            .mt-6 {
+              margin-top: 1.5rem;
             }
           }
         `}
