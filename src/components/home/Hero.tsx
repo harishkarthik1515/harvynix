@@ -119,7 +119,7 @@ export default function Hero() {
           }
 
           .text-xl {
-            font-size: .125rem; /* Adjust text size for mobile */
+            font-size: 1.125rem; /* Adjust text size for mobile */
           }
 
           .mt-10 {
