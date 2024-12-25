@@ -12,6 +12,7 @@ import GetStarted from './pages/GetStarted/index';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Services from './components/home/Services';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/services" element={<Services />} />
           </Routes>
         </Layout>
       </Router>
