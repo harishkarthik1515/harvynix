@@ -13,11 +13,13 @@ import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Services from './components/home/Services';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <CartProvider>
       <Router>
+      <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -1,27 +1,26 @@
 import React from 'react';
-import { Menu, X, ShoppingCart, Home } from 'lucide-react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Link as RouterLink, useLocation, useResolvedPath, useMatch } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCart } from '../../contexts/CartContext';
 import logo from "../images/logo.png";
 
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const location = useLocation();
   const { items } = useCart();
-
   const cartItemsCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (to) => {
+    const resolved = useResolvedPath(to);
+    const match = useMatch({ path: resolved.pathname, end: true });
+    return match ? true : false;
+  };
 
-  const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
+  const NavLink = ({ to, children }) => (
     <RouterLink
       to={to}
       className={`relative px-3 py-2 text-sm font-medium transition-colors ${
-        isActive(to)
-          ? 'text-indigo-600'
-          : 'text-gray-500 hover:text-gray-900'
+        isActive(to) ? 'text-indigo-600' : 'text-gray-500 hover:text-gray-900'
       }`}
     >
       {children}
@@ -37,19 +36,15 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center space-x-4 sm:space-x-8">
             <RouterLink to="/" className="flex items-center">
-              <img src={logo} alt="Logo" className="h-12 w-auto" />
-              <span className="ml-2 text-xl font-bold text-indigo-600">Harvynix</span>
+              <img src={logo} alt="Logo" className="h-10 w-auto" />
+              <span className="ml-2 text-lg font-bold text-indigo-600">Harvynix</span>
             </RouterLink>
-            
-            <div className="hidden sm:flex space-x-8">
-              <NavLink to="/">
-                <span className="flex items-center gap-2">
-                  Home
-                </span>
-              </NavLink>
+
+            <div className="hidden md:flex space-x-6">
+              <NavLink to="/">Home</NavLink>
               <NavLink to="/products">Products</NavLink>
               <NavLink to="/portfolio">Portfolio</NavLink>
               <NavLink to="/projects">CS Projects</NavLink>
@@ -58,7 +53,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="hidden sm:flex sm:items-center sm:space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative">
               <ShoppingCart className="h-6 w-6" />
               {cartItemsCount > 0 && (
@@ -79,8 +74,7 @@ export default function Navbar() {
             </RouterLink>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex items-center sm:hidden">
+          <div className="flex items-center md:hidden">
             <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative mr-4">
               <ShoppingCart className="h-6 w-6" />
               {cartItemsCount > 0 && (
@@ -103,20 +97,18 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="sm:hidden"
+          className="md:hidden bg-white shadow-md"
         >
           <div className="pt-2 pb-3 space-y-1">
             <RouterLink
               to="/"
-              className="flex items-center gap-2 px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             >
-              
               Home
             </RouterLink>
             <RouterLink
