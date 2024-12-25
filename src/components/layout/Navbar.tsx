@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
-import { Link as RouterLink, useLocation, useResolvedPath, useMatch } from 'react-router-dom';
+import { Link as RouterLink, useResolvedPath, useMatch } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCart } from '../../contexts/CartContext';
 import logo from "../images/logo.png";
@@ -37,22 +37,23 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-4 sm:space-x-8">
-            <RouterLink to="/" className="flex items-center">
-              <img src={logo} alt="Logo" className="h-10 w-auto" />
-              <span className="ml-2 text-lg font-bold text-indigo-600">Harvynix</span>
-            </RouterLink>
+          {/* Logo */}
+          <RouterLink to="/" className="flex items-center">
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
+            <span className="ml-2 text-lg font-bold text-indigo-600">Harvynix</span>
+          </RouterLink>
 
-            <div className="hidden lg:flex space-x-6">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/products">Products</NavLink>
-              <NavLink to="/portfolio">Portfolio</NavLink>
-              <NavLink to="/projects">CS Projects</NavLink>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
-            </div>
+          {/* Centered Links */}
+          <div className="hidden lg:flex items-center justify-center flex-1 space-x-6">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/products">Products</NavLink>
+            <NavLink to="/portfolio">Portfolio</NavLink>
+            <NavLink to="/projects">CS Projects</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </div>
 
+          {/* Cart and Get Started Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative">
               <ShoppingCart className="h-6 w-6" />
@@ -74,6 +75,7 @@ export default function Navbar() {
             </RouterLink>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="flex items-center lg:hidden">
             <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative mr-4">
               <ShoppingCart className="h-6 w-6" />
@@ -97,6 +99,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -104,7 +107,7 @@ export default function Navbar() {
           exit={{ opacity: 0, y: -10 }}
           className="lg:hidden bg-white shadow-md"
         >
-          <div className="pt-2 pb-3 space-y-1">
+          <div className="pt-2 pb-3 space-y-1 flex flex-col items-center">
             <RouterLink
               to="/"
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
@@ -122,6 +125,18 @@ export default function Navbar() {
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             >
               Portfolio
+            </RouterLink>
+            <RouterLink
+              to="/projects"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+            >
+              CS Projects
+            </RouterLink>
+            <RouterLink
+              to="/about"
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+            >
+              About
             </RouterLink>
             <RouterLink
               to="/contact"
