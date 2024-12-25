@@ -43,7 +43,7 @@ export default function Navbar() {
               <span className="ml-2 text-lg font-bold text-indigo-600">Harvynix</span>
             </RouterLink>
 
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden lg:flex space-x-6">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/products">Products</NavLink>
               <NavLink to="/portfolio">Portfolio</NavLink>
@@ -53,7 +53,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative">
               <ShoppingCart className="h-6 w-6" />
               {cartItemsCount > 0 && (
@@ -74,7 +74,7 @@ export default function Navbar() {
             </RouterLink>
           </div>
 
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative mr-4">
               <ShoppingCart className="h-6 w-6" />
               {cartItemsCount > 0 && (
@@ -102,7 +102,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-white shadow-md"
+          className="lg:hidden bg-white shadow-md"
         >
           <div className="pt-2 pb-3 space-y-1">
             <RouterLink
@@ -122,18 +122,6 @@ export default function Navbar() {
               className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             >
               Portfolio
-            </RouterLink>
-            <RouterLink
-              to="/projects"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-            >
-              CS Projects
-            </RouterLink>
-            <RouterLink
-              to="/about"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-            >
-              About
             </RouterLink>
             <RouterLink
               to="/contact"
