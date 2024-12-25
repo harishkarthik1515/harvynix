@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const products = [
   {
@@ -28,17 +29,23 @@ const products = [
 ];
 
 export default function FeaturedProducts() {
+  const navigate = useNavigate();
+
+  const handleViewAllProducts = () => {
+    navigate('/products');
+  };
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900">Featured Products</h2>
-          <p className="mt-4 text-xl text-gray-600">Discover our most popular website templates</p>
+          <h2 className="text-base font-bold leading-7 text-indigo-600 sm:text-4xl">Featured Products</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Discover our most popular website templates</p>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <div className="aspect-w-16 aspect-h-9">
                 <img
                   src={product.image}
@@ -61,12 +68,12 @@ export default function FeaturedProducts() {
         </div>
 
         <div className="mt-12 text-center">
-          <a
-            href="/products"
+          <button
+            onClick={handleViewAllProducts}
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
           >
             View All Products
-          </a>
+          </button>
         </div>
       </div>
     </section>
