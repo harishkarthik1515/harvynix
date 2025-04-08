@@ -20,7 +20,7 @@ export const products = [
     title: 'Final Year Project',
     description: 'Comprehensive project solutions for computer science students',
     image: 'https://i.ibb.co/d4MG1TTd/image.png',
-    features: ["Shopping cart", "Payment integration", "Inventory management"],
+    features: ["Analytics", "Graph veiw", "Dynamic data "],
     link: 'https://laliga-analytics.vercel.app/'
   }
 ];
