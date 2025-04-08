@@ -1,26 +1,26 @@
 export const products = [
   {
     id: 1,
-    title: "Portfolio Pro",
-    description: "Perfect for creative professionals and artists",
-    price: "$99",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    features: ["Customizable sections", "Mobile responsive", "SEO optimized"]
+    title: 'Portfolio Pro',
+    description: 'Modern portfolio template for creative professionals',
+    image: 'https://i.ibb.co/G49JhPm4/image.png',
+    features: ["Customizable sections", "Mobile responsive", "SEO optimized"],
+    link: 'https://hardy-gilt.vercel.app'
   },
   {
     id: 2,
-    title: "Business Plus",
-    description: "Complete solution for small businesses",
-    price: "$149",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800",
-    features: ["Contact forms", "Analytics integration", "Product showcase"]
+    title: 'Business Plus',
+    description: 'Professional business website with advanced features',
+    image: 'https://i.ibb.co/gbPpyNxb/image.png',
+    features: ["Contact forms", "Analytics integration", "Product showcase"],
+    link: 'https://alliswell-lac.vercel.app/'
   },
   {
     id: 3,
-    title: "E-Commerce Starter",
-    description: "Start selling online with ease",
-    price: "$199",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
-    features: ["Shopping cart", "Payment integration", "Inventory management"]
+    title: 'Final Year Project',
+    description: 'Comprehensive project solutions for computer science students',
+    image: 'https://i.ibb.co/d4MG1TTd/image.png',
+    features: ["Shopping cart", "Payment integration", "Inventory management"],
+    link: 'https://laliga-analytics.vercel.app/'
   }
 ];

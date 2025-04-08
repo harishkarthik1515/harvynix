@@ -53,42 +53,8 @@ export default function Navbar() {
             <NavLink to="/contact">Contact</NavLink>
           </div>
 
-          {/* Cart and Get Started Button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative">
-              <ShoppingCart className="h-6 w-6" />
-              {cartItemsCount > 0 && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
-                >
-                  {cartItemsCount}
-                </motion.span>
-              )}
-            </RouterLink>
-            <RouterLink
-              to="/get-started"
-              className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors"
-            >
-              Get Started
-            </RouterLink>
-          </div>
-
           {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden">
-            <RouterLink to="/cart" className="text-gray-600 hover:text-gray-900 relative mr-4">
-              <ShoppingCart className="h-6 w-6" />
-              {cartItemsCount > 0 && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="absolute -top-2 -right-2 bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
-                >
-                  {cartItemsCount}
-                </motion.span>
-              )}
-            </RouterLink>
+          
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
@@ -97,7 +63,7 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
+      
 
       {/* Mobile Menu */}
       {isOpen && (

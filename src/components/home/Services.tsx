@@ -6,25 +6,25 @@ const services = [
     title: 'Portfolio Websites',
     description: 'Showcase your work with stunning, professionally designed portfolio websites.',
     icon: Briefcase,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBvcnRmb2xpb3xlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     title: 'Final-Year CS Projects',
     description: 'Complete project solutions with documentation for computer science students.',
     icon: Code,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=8000',
+    image: 'https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D',
   },
   {
     title: 'Static Websites',
     description: 'Fast, reliable, and beautiful static websites for personal and creative projects.',
     icon: Layout,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1642132652860-471b4228023e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3RhdGljJTIwd2Vic2l0ZXxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     title: 'Business Websites',
     description: 'Professional business websites with customizable content and modern features.',
     icon: FileCode,
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+    image: 'https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHdlYnNpdGVzfGVufDB8fDB8fHww',
   },
 ];
 
@@ -63,9 +63,6 @@ export default function Services() {
                   </dt>
                   <dd className="mt-4 text-base leading-7 text-gray-600">{service.description}</dd>
                   <p className="mt-6">
-                    <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-800">
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
                   </p>
                 </div>
               </div>

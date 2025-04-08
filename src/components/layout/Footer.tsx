@@ -29,15 +29,15 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
-                contact@harvynix.com
+                harvynix@gmail.com
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                +1 (555) 123-4567
+                +91 9884995814
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-5 w-5" />
-                123 Web Street, Digital City
+                Perumbakkam, Chennai, India
               </li>
             </ul>
           </div>
@@ -45,8 +45,6 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-indigo-400"><Facebook className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-indigo-400"><Twitter className="h-6 w-6" /></a>
               <a href="#" className="hover:text-indigo-400"><Instagram className="h-6 w-6" /></a>
               <a href="#" className="hover:text-indigo-400"><Linkedin className="h-6 w-6" /></a>
             </div>

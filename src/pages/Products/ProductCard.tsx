@@ -9,9 +9,10 @@ interface ProductCardProps {
   price: string;
   image: string;
   features: string[];
+  link: string; // Added link here
 }
 
-export default function ProductCard({ title, description, price, image, features }: ProductCardProps) {
+export default function ProductCard({ title, description, price, image, features, link }: ProductCardProps) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -31,9 +32,14 @@ export default function ProductCard({ title, description, price, image, features
         </ul>
         <div className="flex justify-between items-center">
           <span className="text-2xl font-bold text-indigo-600">{price}</span>
-          <button className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
-            Learn More
-          </button>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
+          >
+            View
+          </a>
         </div>
       </div>
     </motion.div>

@@ -9,9 +9,17 @@ interface ProjectCardProps {
   image: string;
   technologies: string[];
   difficulty: string;
+  link: string;
 }
 
-export default function ProjectCard({ title, description, image, technologies, difficulty }: ProjectCardProps) {
+export default function ProjectCard({
+  title,
+  description,
+  image,
+  technologies,
+  difficulty,
+  link
+}: ProjectCardProps) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -37,10 +45,17 @@ export default function ProjectCard({ title, description, image, technologies, d
             </span>
           ))}
         </div>
-        <button className="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 flex items-center justify-center">
-          <Code className="h-4 w-4 mr-2" />
-          View Project
-        </button>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 text-center"
+        >
+          <span className="flex items-center justify-center">
+            <Code className="h-4 w-4 mr-2" />
+            View Project
+          </span>
+        </a>
       </div>
     </motion.div>
   );
