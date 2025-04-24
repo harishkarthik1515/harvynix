@@ -2,9 +2,8 @@ import React from 'react';
 import { Star, Quote } from 'lucide-react';
 import { useThemeStore } from '../../store/themeStore';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 
 interface Testimonial {
   id: number;
@@ -59,7 +58,7 @@ const Testimonials: React.FC = () => {
   const isDarkMode = useThemeStore((state) => state.isDarkMode);
 
   return (
-    <section className={`py-20 ${isDarkMode ? 'bg-[#070720]' : 'bg-gray-50'} relative overflow-hidden`}>
+    <section id="testimonials"className={`py-20 ${isDarkMode ? 'bg-[#070720]' : 'bg-gray-50'} relative overflow-hidden`}>
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className={`absolute top-0 left-0 w-full h-64 ${
@@ -86,7 +85,6 @@ const Testimonials: React.FC = () => {
         </div>
 
         <Swiper
-          effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={1}
@@ -96,13 +94,6 @@ const Testimonials: React.FC = () => {
             delay: 3000,
             disableOnInteraction: false,
           }}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 2,
-            slideShadows: false,
-          }}
           breakpoints={{
             640: {
               slidesPerView: 2,
@@ -111,7 +102,7 @@ const Testimonials: React.FC = () => {
               slidesPerView: 3,
             },
           }}
-          modules={[Autoplay, EffectCoverflow]}
+          modules={[Autoplay]}
           className="testimonials-swiper"
         >
           {testimonials.map((testimonial) => (
@@ -121,45 +112,42 @@ const Testimonials: React.FC = () => {
                   isDarkMode 
                     ? 'bg-gradient-to-br from-[#121330] to-[#0a0a1a]' 
                     : 'bg-white'
-                } rounded-xl p-6 relative group h-full shadow-md transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-105 cursor-pointer`}
+                } rounded-xl p-6 relative h-full shadow-md`}
               >
-                {/* Animated glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-400/0 to-purple-500/0 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                
-                <div className="absolute -top-4 -right-4 transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+                <div className="absolute -top-4 -right-4">
                   <Quote className={`w-8 h-8 ${
-                    isDarkMode ? 'text-blue-400/20 group-hover:text-blue-400/40' : 'text-blue-200 group-hover:text-blue-300'
-                  } transform rotate-180 transition-colors duration-300`} />
+                    isDarkMode ? 'text-blue-400/20' : 'text-blue-200'
+                  } transform rotate-180`} />
                 </div>
 
                 <div className="flex items-center mb-6">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-transparent group-hover:border-blue-400 transition-all duration-300">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-transparent">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div>
                     <h3 className={`font-bold ${
                       isDarkMode ? 'text-white' : 'text-gray-900'
-                    } group-hover:text-blue-500 transition-colors duration-300`}>{testimonial.name}</h3>
-                    <p className="text-blue-400 text-sm group-hover:text-blue-500 transition-colors duration-300">{testimonial.role}</p>
+                    }`}>{testimonial.name}</h3>
+                    <p className="text-blue-400 text-sm">{testimonial.role}</p>
                     <p className={`text-sm ${
                       isDarkMode ? 'text-gray-400' : 'text-gray-600'
-                    } group-hover:font-medium transition-all duration-300`}>{testimonial.company}</p>
+                    }`}>{testimonial.company}</p>
                   </div>
                 </div>
 
                 <p className={`mb-6 ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-600'
-                } group-hover:text-current transition-colors duration-300`}>{testimonial.content}</p>
+                }`}>{testimonial.content}</p>
 
                 <div className="flex items-center">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 text-yellow-400 fill-current transform transition-transform duration-300 group-hover:scale-110 group-hover:text-yellow-500"
+                      className="w-5 h-5 text-yellow-400 fill-current"
                     />
                   ))}
                 </div>
