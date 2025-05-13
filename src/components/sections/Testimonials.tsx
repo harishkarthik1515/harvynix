@@ -81,7 +81,7 @@ const metrics: Metric[] = [
 },
   {
     icon: <Briefcase className="w-8 h-8" />,
-    value: "10+",
+    value: "3+",
     label: "Years Experience"
   }
 ];
