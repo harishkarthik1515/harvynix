@@ -58,7 +58,6 @@ function App() {
       <Services />
       <Portfolio />
       <Testimonials />
-      <Metrics />
       <Contact />
       <Footer />
     </div>

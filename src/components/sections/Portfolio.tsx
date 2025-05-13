@@ -17,63 +17,89 @@ interface Project {
   link?: string;
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     id: 1,
-    title: "Financial Analytics Dashboard",
+    title: "Data Analytics Dashboard",
     category: "Web Development",
-    image: "https://images.pexels.com/photos/7681562/pexels-photo-7681562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "A comprehensive financial analytics dashboard for institutional investors with real-time data visualization.",
-    clientName: "FinTech Capital",
-    link: "#"
+    image: "https://i.ibb.co/xSKytdGZ/image.png",
+    description: "Interactive dashboard for data visualization using React, Node.js, MongoDB, and D3.js.",
+    clientName: "LaLiga Analytics",
+    link: "https://laliga-analytics.vercel.app"
   },
   {
     id: 2,
-    title: "E-commerce Mobile App",
-    category: "Mobile Development",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "A feature-rich e-commerce app with personalized shopping experience and secure payment processing.",
-    clientName: "ShopEase",
-    link: "#"
+    title: "Recommendation System",
+    category: "AI Solutions",
+    image: "https://i.ibb.co/7drNrrbS/image.png",
+    description: "Games recommendation system based on user preferences using React, Node.js, MongoDB, Express, Python, and Flask.",
+    clientName: "GameFlix",
+    link: "https://gameflix-six.vercel.app/"
   },
   {
     id: 3,
-    title: "Healthcare Patient Portal",
-    category: "Web Development",
-    image: "https://images.pexels.com/photos/6098045/pexels-photo-6098045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "A secure patient portal allowing access to medical records, appointment scheduling, and doctor communication.",
-    clientName: "MediHealth Solutions",
-    link: "#"
+    title: "Attendance System",
+    category: "AI Solutions",
+    image: "https://i.ibb.co/Tx1dGLM6/image.png",
+    description: "Attendance system using face recognition technology with React, Firebase, OpenCV, and Python.",
+    clientName: "Smart Canteen",
+    link: "https://smartcanteenversion2.vercel.app/"
   },
   {
     id: 4,
-    title: "AI-Driven Content Platform",
-    category: "AI Solutions",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "An intelligent content management system with AI-powered content creation and optimization tools.",
-    clientName: "ContentGenius",
-    link: "#"
+    title: "Portfolio Techy",
+    category: "Portfolio",
+    image: "https://i.ibb.co/spgDY4cQ/image.png",
+    description: "Modern portfolio website for tech enthusiasts with customizable sections.",
+    clientName: "Tech Professionals",
+    link: "https://harishkarthik1515.github.io/modern_port_1/"
   },
   {
     id: 5,
-    title: "Real Estate Virtual Tours",
-    category: "3D & AR",
-    image: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "Immersive 3D virtual property tours with interactive elements and AR furniture placement.",
-    clientName: "PropertyVision",
-    link: "#"
+    title: "The Modern Portfolio",
+    category: "Portfolio",
+    image: "https://i.ibb.co/1fPd5D0p/image.png",
+    description: "A sleek and modern portfolio website with a clean, professional design.",
+    clientName: "Creative Professionals",
+    link: "https://harishkarthik1515.github.io/modern_port_2/"
   },
   {
     id: 6,
-    title: "Fitness Tracking Ecosystem",
-    category: "Mobile Development",
-    image: "https://images.pexels.com/photos/4498362/pexels-photo-4498362.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    description: "A comprehensive fitness platform with wearable device integration, personalized workout plans and nutrition advice.",
-    clientName: "FitLife",
-    link: "#"
-  }
+    title: "Portfolio Fashion",
+    category: "Portfolio",
+    image: "https://i.ibb.co/20GcHg3X/image.png",
+    description: "A stylish portfolio designed specifically for fashion enthusiasts and professionals.",
+    clientName: "Fashion Designers",
+    link: "https://harishkarthik1515.github.io/modern_port_3/"
+  },
+  {
+    id: 7,
+    title: "Portfolio Pro",
+    category: "Portfolio",
+    image: "https://i.ibb.co/G49JhPm4/image.png",
+    description: "Modern portfolio template for creative professionals with customizable sections, mobile responsiveness, and SEO optimization.",
+    clientName: "Hardy",
+    link: "https://hardy-gilt.vercel.app"
+  },
+  {
+    id: 8,
+    title: "Business Plus",
+    category: "Web Development",
+    image: "https://i.ibb.co/gbPpyNxb/image.png",
+    description: "Professional business website featuring contact forms, analytics integration, and comprehensive product showcase.",
+    clientName: "All Is Well",
+    link: "https://alliswell-lac.vercel.app/"
+  },
+  {
+    id: 9,
+    title: "Final Year Project",
+    category: "E-Commerce",
+    image: "https://i.ibb.co/d4MG1TTd/image.png",
+    description: "Comprehensive project solution for computer science students with shopping cart, payment integration, and inventory management.",
+    clientName: "LaLiga Analytics",
+    link: "https://laliga-analytics.vercel.app/"
+  },
 ];
-
 const Portfolio: React.FC = () => {
   const isDarkMode = useThemeStore((state) => state.isDarkMode);
 

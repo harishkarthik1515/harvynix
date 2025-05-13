@@ -19,54 +19,41 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: 'Alex Morgan',
+    name: 'Harish Karthik D',
     role: 'Founder & CEO',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    description: 'Visionary leader with 15+ years of experience in tech innovation and business strategy.',
+    image: 'https://i.ibb.co/PvrbsPwH/IMG-20231004-214348.jpg',
+    description: 'Visionary leader  in tech innovation and business strategy.',
     socials: {
       twitter: '#',
       linkedin: '#',
       github: '#',
-      email: 'alex@harvynix.com'
+      email: 'harishkarthik1515@gmail.com'
     }
   },
   {
     id: 2,
-    name: 'Sarah Chen',
+    name: 'Dhanyashree S',
     role: 'CTO',
-    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    image: 'https://i.ibb.co/1f5StKZK/D.jpg',
     description: 'Tech enthusiast and architect behind our cutting-edge solutions with a passion for innovation.',
     socials: {
       twitter: '#',
       linkedin: '#',
       github: '#',
-      email: 'sarah@harvynix.com'
+      email: '#'
     }
   },
   {
     id: 3,
-    name: 'Michael Torres',
+    name: 'Siddhartha Buddala',
     role: 'Design Lead',
-    image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    image: 'https://i.ibb.co/TqTT76SR/IMG-6679.jpg',
     description: 'Award-winning designer with a keen eye for aesthetics and user-centered approach.',
     socials: {
       twitter: '#',
       linkedin: '#',
       github: '#',
-      email: 'michael@harvynix.com'
-    }
-  },
-  {
-    id: 4,
-    name: 'Olivia Wilson',
-    role: 'Marketing Director',
-    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    description: 'Creative marketer with a data-driven approach to building memorable brand experiences.',
-    socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-      email: 'olivia@harvynix.com'
+      email: '#'
     }
   }
 ];
@@ -305,69 +292,80 @@ const About: React.FC = () => {
           Meet Our <span className={`${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>Team</span>
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map(member => (
-            <div 
-              key={member.id}
-              className="group relative"
-              onMouseEnter={() => setHoveredMember(member.id)}
-              onMouseLeave={() => setHoveredMember(null)}
-            >
-              <div className={`relative overflow-hidden rounded-xl ${
-                isDarkMode 
-                  ? 'bg-gradient-to-br from-[#121330] to-[#0a0a1a]' 
-                  : 'bg-gradient-to-br from-white to-gray-50'
-              } shadow-lg transition-all duration-500 transform group-hover:-translate-y-2 ${
-                isDarkMode 
-                  ? 'group-hover:shadow-blue-900/20' 
-                  : 'group-hover:shadow-blue-300/30'
-              } group-hover:shadow-xl`}>
-                <div className="aspect-w-3 aspect-h-4 relative overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="object-cover w-full h-64 transition-all duration-700 transform group-hover:scale-110"
-                  />
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 transition-opacity group-hover:opacity-90"></div>
-                  
-                  {/* Info Section */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-all duration-500">
-                    <h4 className="text-xl font-bold text-white mb-1 font-[Poppins]">{member.name}</h4>
-                    <p className={`${isDarkMode ? 'text-blue-400' : 'text-blue-300'} font-medium mb-2`}>{member.role}</p>
-                    <p className="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                      {member.description}
-                    </p>
-                    
-                    {/* Social Icons */}
-                    <div className="flex space-x-3 opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                      {member.socials.twitter && (
-                        <a href={member.socials.twitter} className="text-gray-300 hover:text-blue-400 transition-colors">
-                          <Twitter className="w-5 h-5" />
-                        </a>
-                      )}
-                      {member.socials.linkedin && (
-                        <a href={member.socials.linkedin} className="text-gray-300 hover:text-blue-400 transition-colors">
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                      )}
-                      {member.socials.github && (
-                        <a href={member.socials.github} className="text-gray-300 hover:text-blue-400 transition-colors">
-                          <Github className="w-5 h-5" />
-                        </a>
-                      )}
-                      {member.socials.email && (
-                        <a href={`mailto:${member.socials.email}`} className="text-gray-300 hover:text-blue-400 transition-colors">
-                          <Mail className="w-5 h-5" />
-                        </a>
-                      )}
+        {/* Team Member Cards - Updated with better centering and consistent sizing */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl">
+            {teamMembers.map(member => (
+              <div 
+                key={member.id}
+                className="flex justify-center"
+              >
+                <div 
+                  className="group relative w-72 h-96" 
+                  onMouseEnter={() => setHoveredMember(member.id)}
+                  onMouseLeave={() => setHoveredMember(null)}
+                >
+                  <div className={`relative w-full h-full overflow-hidden rounded-xl ${
+                    isDarkMode 
+                      ? 'bg-gradient-to-br from-[#121330] to-[#0a0a1a]' 
+                      : 'bg-gradient-to-br from-white to-gray-50'
+                    } shadow-lg transition-all duration-500 transform group-hover:-translate-y-2 ${
+                    isDarkMode 
+                      ? 'group-hover:shadow-blue-900/20' 
+                      : 'group-hover:shadow-blue-300/30'
+                    } group-hover:shadow-xl`}
+                  >
+                    {/* Image Container */}
+                    <div className="w-full h-full relative overflow-hidden">
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="object-cover w-full h-full transition-all duration-700 transform group-hover:scale-110"
+                      />
+                      
+                      {/* Overlay gradient - Darker at bottom for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 opacity-70 transition-opacity group-hover:opacity-90"></div>
+                      
+                      {/* Info Section - Positioned at bottom */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-all duration-500">
+                        <h4 className="text-xl font-bold text-white mb-1 font-[Poppins]">{member.name}</h4>
+                        <p className={`${isDarkMode ? 'text-blue-400' : 'text-blue-300'} font-medium mb-2`}>{member.role}</p>
+                        
+                        {/* Description - Hidden by default, visible on hover */}
+                        <p className="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                          {member.description}
+                        </p>
+                        
+                        {/* Social Icons */}
+                        <div className="flex space-x-3 opacity-0 transform translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                          {member.socials.twitter && (
+                            <a href={member.socials.twitter} className="text-gray-300 hover:text-blue-400 transition-colors">
+                              <Twitter className="w-5 h-5" />
+                            </a>
+                          )}
+                          {member.socials.linkedin && (
+                            <a href={member.socials.linkedin} className="text-gray-300 hover:text-blue-400 transition-colors">
+                              <Linkedin className="w-5 h-5" />
+                            </a>
+                          )}
+                          {member.socials.github && (
+                            <a href={member.socials.github} className="text-gray-300 hover:text-blue-400 transition-colors">
+                              <Github className="w-5 h-5" />
+                            </a>
+                          )}
+                          {member.socials.email && (
+                            <a href={`mailto:${member.socials.email}`} className="text-gray-300 hover:text-blue-400 transition-colors">
+                              <Mail className="w-5 h-5" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

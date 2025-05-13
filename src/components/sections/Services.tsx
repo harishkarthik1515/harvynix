@@ -54,41 +54,41 @@ const services: Service[] = [
   },
   {
     id: 3,
-    title: "Digital Marketing",
-    description: "Driving growth with data-driven strategies that connect your brand with the right audience at the right time.",
+    title: "App Development",
+    description: "Building powerful, feature-rich mobile and desktop applications tailored to your specific business needs.",
     icon: <TrendingUp className="w-10 h-10 text-blue-400" />,
     benefits: [
-      "SEO optimization",
-      "Content marketing",
-      "Social media management",
-      "Email marketing campaigns"
+      "Native iOS & Android apps",
+      "Cross-platform solutions",
+      "Custom functionality",
+      "App store optimization"
     ],
     features: [
-      "Market analysis",
-      "Campaign tracking",
-      "ROI optimization",
-      "Audience targeting"
+      "Intuitive interfaces",
+      "Offline capabilities",
+      "Integration with existing systems",
+      "Regular updates & maintenance"
     ],
-    cta: "Discover Marketing Plans"
+    cta: "Explore App Development"
   },
   {
     id: 4,
-    title: "Analytics & Insights",
-    description: "Turning data into actionable insights that guide strategic decisions and optimize your digital presence.",
+    title: "Project Management",
+    description: "Efficiently managing your digital projects from conception to completion with clear communication and systematic processes.",
     icon: <PieChart className="w-10 h-10 text-blue-400" />,
     benefits: [
-      "Custom dashboard creation",
-      "Performance tracking",
-      "Conversion optimization",
-      "A/B testing & analysis"
+      "Requirements analysis",
+      "Timeline planning",
+      "Budget management",
+      "Regular progress updates"
     ],
     features: [
-      "Real-time monitoring",
-      "Custom reporting",
-      "Data visualization",
-      "Predictive analytics"
+      "Agile methodology",
+      "Transparent communication",
+      "Risk assessment",
+      "Quality assurance"
     ],
-    cta: "Learn About Analytics"
+    cta: "Learn About Our Process"
   }
 ];
 
